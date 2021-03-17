@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './index.css';
+import {Searchbar} from "./components"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Inventory</h1>
+      
+      <Searchbar/>
+      <div id="table-like">
+        <div id="table-like title">
+          <span>ID</span>
+          <span>Vehicle</span>
+          <span>Type</span>
+          <span>Fuel</span>
+          <span>Color</span>          
+        </div>
+        <div id="table-like ">
+          <span>1</span>
+          <span>BMW</span>
+          <span>Sedan</span>
+          <span>Gasline</span>
+          <span>Blue</span>
+          <div className="flex-container">
+            <div><button>Edit</button></div>
+            <div><button>Delete</button></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
