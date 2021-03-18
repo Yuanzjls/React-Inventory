@@ -8,7 +8,7 @@ function Searchbar(){
           <div className="flex-container"> 
             <input type="text" id="searchtext" placeholder="Enter vechicle name here"/>       
             <div>
-              <input type="submit"/>
+            <button type="submit">Search</button>
             </div>
           </div>
         </div>
