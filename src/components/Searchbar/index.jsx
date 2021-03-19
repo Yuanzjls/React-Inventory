@@ -1,5 +1,7 @@
 import "./index.css"
 import {searchVehicle} from "../../features/inventorySlice"
+import {useState} from "react"
+
 function Searchbar(){
 
   const [searchName, setSearchName] = useState('');

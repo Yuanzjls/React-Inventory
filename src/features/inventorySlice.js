@@ -1,5 +1,6 @@
 import {createSlice, createStore} from '@reduxjs/toolkit';
 import faker from "faker"
+
 export const inventorySlice = createSlice({
     name: "inventory",
     initialState: 
