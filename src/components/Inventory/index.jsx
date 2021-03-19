@@ -1,4 +1,11 @@
+import {selectInventory} from "../../features/inventorySlice";
+import {useSelector} from "react-redux";
+
 export default function Inventory(){
+
+    const inventoryList = useSelector(selectInventory);
+  
+    
     return (
         <div>
             <div className="flex-container">
@@ -10,19 +17,22 @@ export default function Inventory(){
                 <div className="flex-item"></div>
                 <div className="flex-item"></div>      
             </div>
-            <div className="flex-container flex-content" >
-                <div className="flex-item">1</div>
-                <div className="flex-item">BMW</div>
-                <div className="flex-item">Sedan</div>
-                <div className="flex-item">Gasoline</div>
-                <div className="flex-item">Blue</div>    
-                <div className="flex-item">
+            {inventoryList.map(inventory=>
+                (<div className="flex-container flex-content" >
+                    <div className="flex-item">{inventory["ID"]}</div>
+                    <div className="flex-item">{inventory["Vehicle"]}</div>    
+                    <div className="flex-item">{inventory["Type"]}</div>
+                    <div className="flex-item">{inventory["Fuel"]}</div>
+                    <div className="flex-item">{inventory["Color"]}</div>                    
+                    <div className="flex-item">
                     <button type="submit">Edit</button>
                 </div>
                 <div className="flex-item">
                     <button type="submit">Delete</button>       
                 </div>      
-            </div>
+                </div>
+                ))}
+  
         </div>
     );
 

@@ -1,51 +1,24 @@
 import {createSlice, createStore} from '@reduxjs/toolkit';
-
-
-export const inventorySlice = createStore({
+import faker from "faker"
+export const inventorySlice = createSlice({
     name: "inventory",
     initialState: 
-        [
-            {
-                ID:1,
-                Vehicle: "BMW 3",
-                Type: "Sedan",
-                Fuel: "Gasoline",
-                Color: "Blue",
-            },
-            {
-                ID:2,
-                Vehicle: "Tesla Model 3",
-                Type: "Sedan",
-                Fuel: "Electric",
-                Color: "White",
-            },
-            {
-                ID:3,
-                Vehicle: "Honda Civic",
-                Type: "Sedan",
-                Fuel: "Gasoline",
-                Color: "Black",
-            },
-            {
-                ID:4,
-                Vehicle: "Toyata RAV4",
-                Type: "SUV",
-                Fuel: "Hybrid",
-                Color: "Black",
-            },
-            {
-                ID:5,
-                Vehicle: "Ford F-150",
-                Type: "SUV",
-                Fuel: "Gasoline",
-                Color: "White",
-            }
-        ],
+        Array.from(Array(10).keys()).map(item=>({
+            ID:item+1,
+            Vehicle: faker.vehicle.vehicle(),
+            Type: faker.vehicle.type(),
+            Fuel: faker.vehicle.fuel(),
+            Color: faker.vehicle.color(),
+        })),        
     reducers: {
-        getvalue: state=>state,
+        searchVehicle: (state, action)=>state.inventory.filter((item)=>
+            item.Vehicle.include(action.payload)),
     }
 });
 
-export const selectInventory = state=>state.inventroy;
+export const {searchVehicle} = inventorySlice.actions;
 
-export default inventorySlice.reducers;
+export const selectInventory = state=>{
+    return state.inventory};
+
+export default inventorySlice.reducer;

@@ -317,8 +317,9 @@ div.flex-container {
 }
 div.flex-item {
   width: 100px;  /* Or whatever */
-  height: 100px; /* Or whatever */
+  /* height: 100px; Or whatever */
   margin: auto;  /* Magic! */
+  
 }
 
 .flex-container .flex-content{
