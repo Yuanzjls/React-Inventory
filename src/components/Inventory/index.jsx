@@ -1,10 +1,9 @@
-import {selectInventory} from "../../features/inventorySlice";
-import {useSelector} from "react-redux";
-
+import {selectInventory, setEdit} from "../../features/inventorySlice";
+import {useSelector, useDispatch} from "react-redux";
+import Item from "./item.jsx"
 export default function Inventory(){
 
-    const inventoryList = useSelector(selectInventory);
-  
+    const inventoryList = useSelector(selectInventory);  
     
     return (
         <div>
@@ -17,21 +16,11 @@ export default function Inventory(){
                 <div className="flex-item"></div>
                 <div className="flex-item"></div>      
             </div>
-            {inventoryList.map(inventory=>
-                (<div className="flex-container flex-content" >
-                    <div className="flex-item">{inventory["ID"]}</div>
-                    <div className="flex-item">{inventory["Vehicle"]}</div>    
-                    <div className="flex-item">{inventory["Type"]}</div>
-                    <div className="flex-item">{inventory["Fuel"]}</div>
-                    <div className="flex-item">{inventory["Color"]}</div>                    
-                    <div className="flex-item">
-                    <button type="submit">Edit</button>
-                </div>
-                <div className="flex-item">
-                    <button type="submit">Delete</button>       
-                </div>      
-                </div>
-                ))}
+            {inventoryList.value.filter(item=>
+                item["Vehicle"].includes(inventoryList.filter)
+            ).map(inventory=>{                
+                    return (<Item key={inventory.ID} value={inventory}/>);
+                })}
   
         </div>
     );

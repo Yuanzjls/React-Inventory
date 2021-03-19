@@ -1,17 +1,17 @@
 import "./index.css"
 import {searchVehicle} from "../../features/inventorySlice"
 import {useState} from "react"
+import {useDispatch} from 'react-redux';
 
 function Searchbar(){
-
+  const dispatch = useDispatch();
   const [searchName, setSearchName] = useState('');
 
     function submitHandle(e){
       e.preventDefault();
-
+      dispatch(searchVehicle(searchName));
       setSearchName('');
     }
-
 
     return (
       <form onSubmit={submitHandle}>                 
