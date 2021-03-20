@@ -1,9 +1,7 @@
-import {selectInventory, setEdit} from "../../features/inventorySlice";
+import {selectInventory} from "../../features/inventorySlice";
 import {useSelector, useDispatch} from "react-redux";
 import Item from "./item.jsx"
-export default function Inventory(){
-
-    const inventoryList = useSelector(selectInventory);  
+export default function Inventory(props){    
     
     return (
         <div>
@@ -16,8 +14,8 @@ export default function Inventory(){
                 <div className="flex-item"></div>
                 <div className="flex-item"></div>      
             </div>
-            {inventoryList.value.filter(item=>
-                item["Vehicle"].includes(inventoryList.filter)
+            {props.inventoryList.value.filter(item=>
+                item["Vehicle"].includes(props.inventoryList.filter)
             ).map(inventory=>{                
                     return (<Item key={inventory.ID} value={inventory}/>);
                 })}
