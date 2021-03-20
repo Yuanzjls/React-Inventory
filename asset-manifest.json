@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Yuanzjls/React-Inventory.git/static/css/main.7a489f40.chunk.css",
-    "main.js": "/Yuanzjls/React-Inventory.git/static/js/main.89a75228.chunk.js",
-    "main.js.map": "/Yuanzjls/React-Inventory.git/static/js/main.89a75228.chunk.js.map",
-    "runtime-main.js": "/Yuanzjls/React-Inventory.git/static/js/runtime-main.588df3c3.js",
-    "runtime-main.js.map": "/Yuanzjls/React-Inventory.git/static/js/runtime-main.588df3c3.js.map",
-    "static/js/2.7c2122d0.chunk.js": "/Yuanzjls/React-Inventory.git/static/js/2.7c2122d0.chunk.js",
-    "static/js/2.7c2122d0.chunk.js.map": "/Yuanzjls/React-Inventory.git/static/js/2.7c2122d0.chunk.js.map",
-    "static/js/3.2aef4b72.chunk.js": "/Yuanzjls/React-Inventory.git/static/js/3.2aef4b72.chunk.js",
-    "static/js/3.2aef4b72.chunk.js.map": "/Yuanzjls/React-Inventory.git/static/js/3.2aef4b72.chunk.js.map",
-    "index.html": "/Yuanzjls/React-Inventory.git/index.html",
-    "static/css/main.7a489f40.chunk.css.map": "/Yuanzjls/React-Inventory.git/static/css/main.7a489f40.chunk.css.map",
-    "static/js/2.7c2122d0.chunk.js.LICENSE.txt": "/Yuanzjls/React-Inventory.git/static/js/2.7c2122d0.chunk.js.LICENSE.txt"
+    "main.css": "/React-Inventory/static/css/main.7a489f40.chunk.css",
+    "main.js": "/React-Inventory/static/js/main.89a75228.chunk.js",
+    "main.js.map": "/React-Inventory/static/js/main.89a75228.chunk.js.map",
+    "runtime-main.js": "/React-Inventory/static/js/runtime-main.195a249d.js",
+    "runtime-main.js.map": "/React-Inventory/static/js/runtime-main.195a249d.js.map",
+    "static/js/2.7c2122d0.chunk.js": "/React-Inventory/static/js/2.7c2122d0.chunk.js",
+    "static/js/2.7c2122d0.chunk.js.map": "/React-Inventory/static/js/2.7c2122d0.chunk.js.map",
+    "static/js/3.2aef4b72.chunk.js": "/React-Inventory/static/js/3.2aef4b72.chunk.js",
+    "static/js/3.2aef4b72.chunk.js.map": "/React-Inventory/static/js/3.2aef4b72.chunk.js.map",
+    "index.html": "/React-Inventory/index.html",
+    "static/css/main.7a489f40.chunk.css.map": "/React-Inventory/static/css/main.7a489f40.chunk.css.map",
+    "static/js/2.7c2122d0.chunk.js.LICENSE.txt": "/React-Inventory/static/js/2.7c2122d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.588df3c3.js",
+    "static/js/runtime-main.195a249d.js",
     "static/js/2.7c2122d0.chunk.js",
     "static/css/main.7a489f40.chunk.css",
     "static/js/main.89a75228.chunk.js"
