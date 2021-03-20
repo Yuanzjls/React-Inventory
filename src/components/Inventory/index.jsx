@@ -1,10 +1,19 @@
-import {selectInventory, setEdit} from "../../features/inventorySlice";
-import {useSelector, useDispatch} from "react-redux";
 import Item from "./item.jsx"
-export default function Inventory(){
+import {createSelector} from "reselect"
+import {useState} from "react"
+import {selectInventory} from "../../features/inventorySlice"
+import { connect } from 'react-redux'
 
-    const inventoryList = useSelector(selectInventory);  
-    
+export default function Inventory(props){   
+    const itemsPerPage = 5, length = props.inventoryList.length;    
+    const [page, setPage] = useState(0);
+    const pages = length / itemsPerPage;
+    const buttons = [];
+
+    for (let i=0; i<pages; i++) {
+        buttons.push(<button key={i} onClick={()=>setPage(i)}>{i+1}&nbsp;&nbsp;</button>);
+    }
+
     return (
         <div>
             <div className="flex-container">
@@ -16,13 +25,17 @@ export default function Inventory(){
                 <div className="flex-item"></div>
                 <div className="flex-item"></div>      
             </div>
-            {inventoryList.value.filter(item=>
-                item["Vehicle"].includes(inventoryList.filter)
+            {props.inventoryList.filter((value, index)=>
+                index>=itemsPerPage*page && index<itemsPerPage*(page+1)
             ).map(inventory=>{                
                     return (<Item key={inventory.ID} value={inventory}/>);
                 })}
+
+            <div>
+                {buttons}
+               
+            </div>
   
         </div>
     );
-
 }

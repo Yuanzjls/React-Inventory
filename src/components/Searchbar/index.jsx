@@ -1,11 +1,15 @@
 import "./index.css"
 import {searchVehicle} from "../../features/inventorySlice"
 import {useState} from "react"
-import {useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux'
 
-function Searchbar(){
+
+function Searchbar(props){
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState('');
+   
+  const inventoryLength= props.length;
+  const noun = inventoryLength>1?"vehicles":"vehicle";
 
     function submitHandle(e){
       e.preventDefault();
@@ -16,10 +20,10 @@ function Searchbar(){
     return (
       <form onSubmit={submitHandle}>                 
         <div>
-          <label htmlFor="searchtext">Found 50 Vehicles</label>
+          <label htmlFor="searchText">Found {inventoryLength} {noun}</label>
           <br></br>
           <div className="flex-container"> 
-            <input type="text" id="searchtext" placeholder="Enter vechicle name here" 
+            <input type="text" id="searchText" placeholder="Enter vehicle name here" 
             value={searchName} onChange={e=>{setSearchName(e.target.value);}}/>       
             <div>
             <button type="submit">Search</button>
