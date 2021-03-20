@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <h1>Inventory</h1>
       
-      <Searchbar inventoryList={inventoryList}/>
+      <Searchbar length={inventoryList.length}/>
       <Inventory inventoryList={inventoryList}/>
             
     </div>

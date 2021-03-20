@@ -1,10 +1,10 @@
-import {createSlice, createStore} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import faker from "faker"
 
 export const inventorySlice = createSlice({
     name: "inventory",
     initialState: {
-        value:Array.from(Array(10).keys()).map(item=>({
+        value:Array.from(Array(30).keys()).map(item=>({
             ID: item+1,
             Vehicle: faker.vehicle.vehicle(),
             Type: faker.vehicle.type(),
@@ -42,6 +42,6 @@ export const inventorySlice = createSlice({
 
 export const {searchVehicle, setEdit, setVehicle, deleteVehicle} = inventorySlice.actions;
 
-export const selectInventory = state=> state.inventory;
+export const selectInventory = state=> state.inventory.value.filter(item=>item["Vehicle"].includes(state.inventory.filter));
 
 export default inventorySlice.reducer;

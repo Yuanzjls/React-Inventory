@@ -7,9 +7,8 @@ import {useDispatch} from 'react-redux'
 function Searchbar(props){
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState('');
-  const inventoryList = props.inventoryList;  
-  const inventoryLength= inventoryList.value.filter(item=>
-    item["Vehicle"].includes(inventoryList.filter)).length;
+   
+  const inventoryLength= props.length;
   const noun = inventoryLength>1?"vehicles":"vehicle";
 
     function submitHandle(e){
