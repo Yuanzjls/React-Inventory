@@ -2,7 +2,7 @@
   "name": "week3-car-inventory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Yuanzjls/React-Inventory",
+  "homepage": "https://yuanzjls.github.io/React-Inventory/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.9",
