@@ -18,13 +18,15 @@ function Searchbar(props){
     }
 
     return (
-      <form onSubmit={submitHandle}>                 
+      <form className="form-group" onSubmit={submitHandle}>                 
         <div>
           <label htmlFor="searchText">Found {inventoryLength} {noun}</label>
           <br></br>
-          <div className="flex-container"> 
-            <input type="text" id="searchText" placeholder="Enter vehicle name here" 
-            value={searchName} onChange={e=>{setSearchName(e.target.value);}}/>       
+          <div>
+            <div>
+              <input type="text" id="searchText" placeholder="Enter vehicle name here" 
+              value={searchName} onChange={e=>{setSearchName(e.target.value);}}/>      
+            </div>  
             <div>
             <button type="submit">Search</button>
             </div>
