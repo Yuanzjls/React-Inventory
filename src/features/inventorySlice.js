@@ -4,6 +4,8 @@ import faker from "faker"
 export const inventorySlice = createSlice({
     name: "inventory",
     initialState: {
+        // this can be simplified as
+        // Array(30).fill({}).map(_ => { ... });
         value:Array.from(Array(30).keys()).map(item=>({
             ID: item+1,
             Vehicle: faker.vehicle.vehicle(),
@@ -13,7 +15,7 @@ export const inventorySlice = createSlice({
             isEdit: false,
         })),
         filter:"",
-    },        
+    },
     reducers: {
         searchVehicle: (state, action)=>{
             return {...state, filter:action.payload};
@@ -22,7 +24,7 @@ export const inventorySlice = createSlice({
             return {...state, value: state.value.map(item=>{
                 if (item.ID===action.payload.ID){
                     return {...action.payload, isEdit:!item.isEdit};
-                } 
+                }
                 return item;
             })};
         },
@@ -30,7 +32,7 @@ export const inventorySlice = createSlice({
             return {...state, value: state.value.map(item=>{
                 if (item.ID===action.payload.ID){
                     return {...item, isEdit:!item.isEdit};
-                } 
+                }
                 return item;
             })};
         },
