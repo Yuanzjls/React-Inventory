@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/React-Inventory/static/css/main.7a489f40.chunk.css",
-    "main.js": "/React-Inventory/static/js/main.89a75228.chunk.js",
-    "main.js.map": "/React-Inventory/static/js/main.89a75228.chunk.js.map",
+    "main.css": "/React-Inventory/static/css/main.c9ae7925.chunk.css",
+    "main.js": "/React-Inventory/static/js/main.8e9ea82d.chunk.js",
+    "main.js.map": "/React-Inventory/static/js/main.8e9ea82d.chunk.js.map",
     "runtime-main.js": "/React-Inventory/static/js/runtime-main.195a249d.js",
     "runtime-main.js.map": "/React-Inventory/static/js/runtime-main.195a249d.js.map",
     "static/js/2.7c2122d0.chunk.js": "/React-Inventory/static/js/2.7c2122d0.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.2aef4b72.chunk.js": "/React-Inventory/static/js/3.2aef4b72.chunk.js",
     "static/js/3.2aef4b72.chunk.js.map": "/React-Inventory/static/js/3.2aef4b72.chunk.js.map",
     "index.html": "/React-Inventory/index.html",
-    "static/css/main.7a489f40.chunk.css.map": "/React-Inventory/static/css/main.7a489f40.chunk.css.map",
+    "static/css/main.c9ae7925.chunk.css.map": "/React-Inventory/static/css/main.c9ae7925.chunk.css.map",
     "static/js/2.7c2122d0.chunk.js.LICENSE.txt": "/React-Inventory/static/js/2.7c2122d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.195a249d.js",
     "static/js/2.7c2122d0.chunk.js",
-    "static/css/main.7a489f40.chunk.css",
-    "static/js/main.89a75228.chunk.js"
+    "static/css/main.c9ae7925.chunk.css",
+    "static/js/main.8e9ea82d.chunk.js"
   ]
 }
