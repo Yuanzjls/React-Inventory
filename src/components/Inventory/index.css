@@ -1,3 +1,4 @@
 div.flex-item > input[type="text"] {
-    width: 100px;
+    width: 95%;
+    text-align: center;
 }
