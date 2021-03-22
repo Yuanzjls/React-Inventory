@@ -13,7 +13,9 @@ export default function Inventory(props){
     for (let i=0; i<pages; i++) {
         buttons.push(<button key={i} onClick={()=>setPage(i)}>{i+1}&nbsp;&nbsp;</button>);
     }
-
+    if (page>0 && page >= pages) {
+        setPage(page-1);
+    }
     return (
         <div>
             <div className="flex-container">
