@@ -1,9 +1,12 @@
-import {setEdit, setVehicle, deleteVehicle} from "../../features/inventorySlice";
+import {setVehicle, deleteVehicle} from "../../features/inventorySlice";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 import "./index.css"
 export default function Item(props){
     const dispatch = useDispatch();
+
+    const [isEdit, setEdit] = useState(false);
+
     const [state, setState] = useState({
         "Vehicle":props.value.Vehicle,
         "Type":props.value.Type,
@@ -11,25 +14,26 @@ export default function Item(props){
         "Color":props.value.Color,
     });
 
-    const [newState, setNewState] = useState({
-        "Vehicle":props.value.Vehicle,
-        "Type":props.value.Type,
-        "Fuel":props.value.Fuel,
-        "Color":props.value.Color,
-    });
+    
     function handleValueChange(e){
-        setNewState({...newState, [e.target.name]:e.target.value});
+        setState({...state, [e.target.name]:e.target.value});
     }
-    if (props.value['isEdit']===false) {
+    if (isEdit===false) {
         return (<div className="flex-container flex-content" >
                     <div className="flex-item">{props.value["ID"]}</div>
-                            <div className="flex-item">{state["Vehicle"]}</div>    
-                            <div className="flex-item">{state["Type"]}</div>
-                            <div className="flex-item">{state["Fuel"]}</div>
-                            <div className="flex-item">{state["Color"]}</div>                    
+                            <div className="flex-item">{props.value["Vehicle"]}</div>    
+                            <div className="flex-item">{props.value["Type"]}</div>
+                            <div className="flex-item">{props.value["Fuel"]}</div>
+                            <div className="flex-item">{props.value["Color"]}</div>                    
                             <div className="flex-item">
                             <button type="button" onClick={()=>{
-                                dispatch(setEdit({ID: props.value["ID"]}));
+                                setEdit(true);
+                                setState({
+                                    "Vehicle":props.value.Vehicle,
+                                    "Type":props.value.Type,
+                                    "Fuel":props.value.Fuel,
+                                    "Color":props.value.Color,
+                                })
                             }}>Edit</button>
                         </div>
                         <div className="flex-item" onClick={()=>dispatch(deleteVehicle({ID: props.value["ID"]}))}>
@@ -41,32 +45,32 @@ export default function Item(props){
         return (<div className="flex-container flex-content" >
                 <div className="flex-item">{props.value["ID"]}</div>  
                 <div className="flex-item">
-                    <input type="text" value={newState["Vehicle"]} name="Vehicle" onChange={(e)=>{
+                    <input type="text" value={state["Vehicle"]} name="Vehicle" onChange={(e)=>{
                             handleValueChange(e);
                         }}/>
                 </div>    
                 <div className="flex-item">
-                    <input type="text" value={newState["Type"]} name="Type" onChange={(e)=>{
+                    <input type="text" value={state["Type"]} name="Type" onChange={(e)=>{
                             handleValueChange(e);
                         }}/>
                 </div>
                 <div className="flex-item">
-                    <input type="text" value={newState["Fuel"]} name="Fuel" onChange={(e)=>{
+                    <input type="text" value={state["Fuel"]} name="Fuel" onChange={(e)=>{
                             handleValueChange(e);}}/>
                 </div>
                 <div className="flex-item">
-                    <input type="text" value={newState["Color"]} name="Color" onChange={(e)=>{
+                    <input type="text" value={state["Color"]} name="Color" onChange={(e)=>{
                             handleValueChange(e);}}/>
                 </div>                    
                 <div className="flex-item">
                 <button type="button" onClick={()=>{
-                    setState(newState);
-                    dispatch(setVehicle({...newState, ID: props.value["ID"]}));
+                    dispatch(setVehicle({...state, ID: props.value["ID"]}));
+                    setEdit(false);
                 }}>Confirm</button>
             </div>
             <div className="flex-item">
                 <button type="button" onClick={()=>{
-                    dispatch(setEdit({ID: props.value["ID"]}));
+                    setEdit(false);
                 }}>Cancel</button>       
             </div>      
             </div>
