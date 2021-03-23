@@ -10,7 +10,6 @@ export const inventorySlice = createSlice({
             Type: faker.vehicle.type(),
             Fuel: faker.vehicle.fuel(),
             Color: faker.vehicle.color(),
-            isEdit: false,
         })),
         filter:"",
     },        
@@ -21,15 +20,7 @@ export const inventorySlice = createSlice({
         setVehicle:(state, action)=>{
             return {...state, value: state.value.map(item=>{
                 if (item.ID===action.payload.ID){
-                    return {...action.payload, isEdit:!item.isEdit};
-                } 
-                return item;
-            })};
-        },
-        setEdit:(state, action)=>{
-            return {...state, value: state.value.map(item=>{
-                if (item.ID===action.payload.ID){
-                    return {...item, isEdit:!item.isEdit};
+                    return {...action.payload};
                 } 
                 return item;
             })};
@@ -40,7 +31,7 @@ export const inventorySlice = createSlice({
     }
 });
 
-export const {searchVehicle, setEdit, setVehicle, deleteVehicle} = inventorySlice.actions;
+export const {searchVehicle, setVehicle, deleteVehicle} = inventorySlice.actions;
 
 export const selectInventory = state=> state.inventory.value.filter(item=>item["Vehicle"].includes(state.inventory.filter));
 
